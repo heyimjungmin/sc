@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floor Map Example - Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+</head>
+<body>
+<div id="map" style="width: 1040px; height: 640px;"></div>
+<script>
+    var map = L.map('map', {crs: L.CRS.Simple});
+    var bounds = [[-100,-300], [720,1080]]; // 이미지의 해상도를 bounds로 설정한다.
+    //L.imageOverlay('seat.png', bounds).addTo(map); // 배경 이미지를 설정한다.
+
+    L.rectangle([[185,-40], [305,80]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[320,90], [440,210]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[530,210], [650,330]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[530,330], [650,450]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[530,450], [650,570]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[380,210], [500,330]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[380,330], [500,450]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[380,450], [500,570]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[260,210], [380,330]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[260,330], [380,450]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[260,450], [380,570]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[55,90], [175,210]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[0,210], [120,330]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[0,330], [120,450]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[0,450], [120,570]], {color: "white", weight: 1}).addTo(map);
+
+    L.rectangle([[120,210], [240,330]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[120,330], [240,450]], {color: "white", weight: 1}).addTo(map);
+    L.rectangle([[120,450], [240,570]], {color: "white", weight: 1}).addTo(map);
+
+    L.circle([170, 270], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("김경훈", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("김경훈 <br />미디어팀 <br /> 8813");
+    L.circle([170, 390], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("김규현", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("김규현 <br />미디어팀 <br />8936");
+    L.circle([170, 510], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("박소정", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("박소정 <br />미디어팀 <br /> 8938");
+
+    L.circle([60, 270], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("김정호", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("김정호 <br />미디어팀 <br /> 8933");
+    L.circle([60, 390], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("이영호", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("이영호 <br />미디어팀 <br /> 8935");
+    L.circle([60, 510], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("이명주", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("이명주 <br />미디어팀 <br /> 8624");
+
+    L.circle([115, 150], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("정성민", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("정성민 | 팀장 <br />미디어팀 <br /> 8811");
+
+    L.circle([320, 270], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("김구연", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("김구연 <br />커머스팀 <br /> 8818");
+    L.circle([320, 390], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("권예슬", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("권예슬 <br /> 미디어팀  <br /> 8937");
+    L.circle([320, 510], {color: 'green',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("이정현", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("이정현 <br />미디어팀 <br /> 8932");
+
+    L.circle([440, 270], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("유지혁", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("유지혁 <br />커머스팀 <br /> 8816");
+    L.circle([440, 390], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("김은솔", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("김은솔 <br />커머스팀 <br /> 8939");
+    L.circle([440, 510], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("이동범", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("이동범 <br />커머스팀 <br /> 8814");
+
+    L.circle([380, 150], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("정희정", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("정희정 | 팀장 <br />커머스팀 <br /> 8812");
+
+    L.circle([590, 270], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("이준", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("이준 <br /> 커머스팀  <br /> 8817");
+    L.circle([590, 390], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("남상민", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("남상민 <br />커머스팀 <br /> 8815");
+    L.circle([590, 510], {color: 'blue',radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("박정민", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("박정민 <br />커머스팀 <br /> 8934");
+
+    L.circle([245, 20], {color: "purple", radius: 35, weight: 0}).addTo(map)
+    .bindTooltip("박승규", {permanent: true, direction: 'center'}).openTooltip()
+    .bindPopup("박승규 | 부장 <br />미디어커머스부 <br /> 8910");
+
+    map.fitBounds(bounds); // 표현 영역을 설정한다
+</script>
+</body>
+</html>
